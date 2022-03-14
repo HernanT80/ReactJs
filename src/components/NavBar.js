@@ -6,8 +6,9 @@ function NavBar() {
     return(
         <header className = 'main-header'>
             <div className = 'container-logo'>
-                <img src="logo192.png" className = "img-header" />
+                <img src="logo.jpg" className = "img-header" />
             </div>
+
             <ul className = 'navbar'>
                 <li><Button variant="contained">Inicio</Button> </li>
                 <li><Button variant="contained">Productos</Button> </li>
