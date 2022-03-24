@@ -1,22 +1,27 @@
 import React from "react";
 import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 
-export default function ItemListContainer({title,price}){
+import ItemCount from "../ItemCount/ItemCount";
+
+export default function ItemListContainer({image, title,price}){
+
+    const onAdd = (count) => {
+        alert(`Agregaste ${count} productos`) 
+      }
+
     return(
         <Card sx={{ maxWidth: 300 }}>
         <CardMedia
           component="img"
-          alt="Moto edge 20 lite"
           height="300"
-          image="./assets/celular.png"
+          image={image}
         />
         <CardContent>
             <h3>{title}</h3>
             <p>Precio: {price}</p>
-            <Button variant="contained">Comprar</Button>
+            <ItemCount stock = {5} initial = {0} onAdd ={onAdd}/>
         </CardContent>
         </Card>
 

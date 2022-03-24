@@ -1,0 +1,31 @@
+.container-count{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-count-button{
+  width: 100%;
+  display: flex;
+  padding: 10px 25px;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 1.5rem;
+  } 
+
+  .button-count {
+    width: 100px;
+    height: 100%;
+    font-size: 1.6rem;
+    background-color: #1976d2;
+    border: #fafafa;
+    color: #fafafa;
+  }
+  .count {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+  }
