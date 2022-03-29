@@ -1,13 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { DataProduct } from '../DataProduct/DataProduct';
-import ItemCount from '../ItemCount/ItemCount';
 import '../ItemList/ItemList.css'
-
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
 import Item from "../Item/Item";
-
 
 const ItemList =() => {
 
@@ -33,35 +27,30 @@ const ItemList =() => {
         getProductMook()
     },[])
 
-    const onAdd = (count) => {
-        alert(`Agregaste ${count} productos`) 
-      }
-
     return(
         <div className='container-products'>
-            {products.map( ( prod ) => {
-             return(
-                 <div key ={prod.id}>
-                    <Card sx={{ maxWidth: 300 }}>
-                    <CardMedia
-                    component="img"
-                    height="300"
-                    image={prod.image}
+
+            {
+            
+            products.map((prod) => {
+              
+                return (
+                    <div key ={prod.id}>
+                    <Item
+                    id ={prod.id}
+                    title ={prod.title}
+                    price ={prod.price}
+                    stock ={prod.stock}
+                    image = {prod.image}
                     />
-                    <CardContent>
-                        <h3>{prod.title}</h3>
-                        <p>Precio: {prod.price}</p>
-                        <ItemCount stock = {prod.stock} initial = {1} onAdd ={onAdd}/>
-                    </CardContent>
-                    <Item/>
-                    </Card>
-                  </div>
+                </div>
                 )
-            })}
-        </div>
+            })
+            }
+            
+         </div>
     )
-
-
 }
 
-export default ItemList
+export default ItemList;
+
