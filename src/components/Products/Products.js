@@ -1,14 +1,14 @@
 import React from 'react';
 import  ItemListContainer from "../ItemListContainer/ItemListContainer";
+import '../Products/Products.css'
 
-export default function Products() {
-
+const Products = ({}) => {
+    
     return(
-
-        <div className='container-products'>
-        <ItemListContainer image={"./assets/celular.png"} title='Moto Edge 20 lite' price={69.999}/>
-        <ItemListContainer image={"./assets/celular.png"} title='Moto Edge 20 lite' price={69.999}/>
-        <ItemListContainer image={"./assets/celular.png"} title='Moto Edge 20 lite' price={69.999}/>
+        <div >
+            <ItemListContainer/>
         </div>
     )
 }
+
+export default Products
