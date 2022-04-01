@@ -1,29 +1,33 @@
 import React from'react';
-import React, { useEffect, useState } from 'react';
-import { DataProduct } from '../DataProduct/DataProduct';
+import { useState, useEffect} from 'react';
+import ItemDetail from '../ItemDetail/ItemDetail';
+import ProductMock from '../DataProduct/ProductMock';
 
 
 
-const ItemDetailContainer = ({id}) =>{
+const ItemDetailContainer = () =>{
 
-    const [product, setProduct] = useState(null);
+    const [productData, setProductData] = useState({})
 
-    useEffect(()=>{
-        productId(DataProduct,id)
-    },[id])
-    
-    console.log(product)
-    const productId = () => {
-        return DataProduct.map(( product) =>{
-            if (product.id == id) {
-            return console.log(product)
-        }
+    const getProduct = () =>{
+        return new Promise((resolve, reject) => {
+            return resolve(ProductMock)
         })
     }
 
+    useEffect( () =>{
+        getProduct().then((producto) =>{
+            setProductData(producto)
+        }).finally( () => {
+            console.log('finalizo la llamada')
+        })
+
+    },[])
+
+
     return (
         <div>
-            <ItemDetail item={product} />
+            <ItemDetail data={productData} />
         </div>
    
     )
