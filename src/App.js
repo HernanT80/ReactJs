@@ -7,14 +7,14 @@ import './components/Products/Products.css'
 import './components/ItemCount/ItemCount.css'
 import './components/ItemListContainer/ItemListContainer.css'
 import './components/ItemList/ItemList.css'
+//import {BrowserRouter,Routes,Route } from 'react-router-dom'
 
 function App() {
 
   return (
     <div className="App">
-          <NavBar />
-          <Products/>
-          
+      <NavBar />
+      <Products/>
     </div>
   );
 }
