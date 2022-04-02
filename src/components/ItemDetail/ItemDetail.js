@@ -1,25 +1,33 @@
 import React from 'react';
-import ItemCount from '../ItemCount/ItemCount';
+import '../ItemDetail/ItemDetail.css'
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import { useEffect, useState } from 'react';
 
-const ItemDetail = ({ data }) => {
+
+
+const ItemDetail = ({data}) => {
     const onAdd = (count) => {
         alert(`Agregaste ${count} productos`) 
   };
 
-  return (
 
-    <div>
-        <img src={data.image} alt="" className="product-detail__img" />
-        <ul className="info-grid">
-            <li>Titulo:</li>
-            <li>{data.title}</li>
-            <li>Precio:</li>
-            <li>{data.price}</li>
-            <li>Stock:</li>
-            <li>{data.stock}</li>
-    </ul>
-    <ItemCount stock = {stock} initial = {1} onAdd ={onAdd}/>
-  </div>
+  return (
+    <Container className='container-general'> 
+           <div className='container-detail'>
+            <div className='container-detail__img'>
+                <img src={data.image} alt="celu" />
+            </div>
+            <div className='container-detail__info'>
+                <h3 className='info__title'>{data.title}</h3>
+                <p className='info__subtitle'>Precio</p>
+                <p className='info__text'>$ {data.price}</p>
+                <p className='info__subtitle'>stock</p>
+                <p className='info__text'>{data.stock}</p>
+                <Button variant="contained">COMPRAR</Button>
+                </div>
+            </div>
+    </Container>
   );
 };
 
