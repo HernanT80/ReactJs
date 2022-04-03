@@ -17,15 +17,14 @@
   } 
 
   .button-count {
-    width: 100px;
-    height: 100%;
+    width: 50px;
+    height: 50%;
     font-size: 1.6rem;
-    background-color: #1976d2;
+    background: none;
     border: #fafafa;
-    color: #fafafa;
+    color: #0c0c0c;
   }
   .count {
     text-align: center;
-    height: 100%;
     width: 100%;
   }
