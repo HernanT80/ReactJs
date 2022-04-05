@@ -1,8 +1,7 @@
 .container-products{
-    width: 100%;
-    display: flex;
-    padding: 10px 10px;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    gap: 30px 60px;
+    margin: 40px 20px;
  }

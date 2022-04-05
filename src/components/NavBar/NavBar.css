@@ -7,6 +7,12 @@ header.main-header{
     box-sizing: border-box;
     background-color: gray;
   }
+
+  a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+}
   
   ul.navbar{
     list-style: none;
@@ -15,6 +21,7 @@ header.main-header{
   
   ul.navbar li{
     margin-right: 15px;
+    text-decoration: none !important;
   }
   
   .container-logo{

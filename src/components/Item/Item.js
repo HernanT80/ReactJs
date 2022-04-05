@@ -4,6 +4,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
+import { Link } from 'react-router-dom';
 
 const Item = ({id, title, price, stock, image}) =>{
 
@@ -19,7 +20,7 @@ const Item = ({id, title, price, stock, image}) =>{
         <CardContent>
             <h3>{title}</h3>
             <p>Precio: {price}</p>  
-            <Button variant="contained">Ver detalle</Button>            
+            <Link to={`/category/${id}`}><Button variant="contained">Ver detalle</Button></Link>           
         </CardContent>
         </Card>
     );
