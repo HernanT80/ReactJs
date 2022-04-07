@@ -8,6 +8,7 @@ import ProductMock from '../DataProduct/ProductMock'
 const ItemDetailContainer = () =>{
 
     const [product, setProduct] = useState([])
+    const [sumItem, setSumItem] = useState(false)
 
     const getProduct = () => {
         return new Promise((resolve, reject) => {
@@ -22,10 +23,15 @@ const ItemDetailContainer = () =>{
             console.log("termino la llamada")
         })
     },[])
+
+    const onAdd =(count) =>{
+        console.log(`Agregastess ${product.title}, cantidad: ${count}`)
+        setSumItem(true);
+    }
      
     return (
         <>
-            <ItemDetail data={product}/>
+            <ItemDetail onAdd ={onAdd} data={product} sumItem={sumItem}/>
         </>
    
     )

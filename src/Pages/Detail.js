@@ -1,5 +1,3 @@
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { DataProduct } from '../components/DataProduct/DataProduct';
@@ -8,6 +6,7 @@ import ItemDetail from '../components/ItemDetail/ItemDetail';
 const DetailPage = () => {
     const { id, category } = useParams()
     const [product, setProduct] = useState({})
+    const [sumItem, setSumItem] = useState(false)
 
     useEffect( () => {
         filterProductById(DataProduct, id)
@@ -20,11 +19,16 @@ const DetailPage = () => {
             }
         })
     }
-    
+
+    const onAdd =(count) =>{
+        console.log(`Agregast ${product.title}, cantidad: ${count}`)
+        setSumItem(true);
+    }
+
     return(
         <>
-        <ItemDetail data={product}/>
-         </>
+        <ItemDetail onAdd ={onAdd} data={product} sumItem={sumItem}/>
+        </>
     )
 }
 

@@ -1,17 +1,12 @@
 import React from 'react';
 import '../ItemDetail/ItemDetail.css'
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import ItemCount from '../ItemCount/ItemCount';
-import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
-const ItemDetail = ({data}) => {
-    const onAdd = (count) => {
-        alert(`Agregaste ${count} productos`) 
-  };
-
+const ItemDetail = ({data, onAdd, sumItem}) => {
 
   return (
     <Container className='container-general'> 
@@ -25,7 +20,7 @@ const ItemDetail = ({data}) => {
                 <p className='info__text'>$ {data.price}</p>
                 <p className='info__subtitle'>stock</p>
                 <p className='info__text'>{data.stock}</p>
-                <ItemCount stock = {data.stock} initial = {1} onAdd ={onAdd}/>
+                {sumItem ? <Link to='/cart'>Ir al carrito</Link> : <ItemCount stock = {data.stock} initial = {1} onAdd ={onAdd}/>}
                 </div>
             </div>
     </Container>
@@ -33,3 +28,4 @@ const ItemDetail = ({data}) => {
 };
 
 export default ItemDetail;
+

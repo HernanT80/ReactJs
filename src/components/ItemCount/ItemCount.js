@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 
 const ItemCount = ({stock, initial, onAdd}) =>{
@@ -14,15 +15,20 @@ const ItemCount = ({stock, initial, onAdd}) =>{
     const lessProduct = () => {
         setCount (count - 1)
     }
+    const click = ()=>{
+        <Link to='/cart'Ir al carrito></Link>
+        
+    }
 
     return(
         <div className='container-count'>
             <div className='container-count-button'>
-                <button className='button-count' onClick={lessProduct} disabled ={count === 0 ? true : false}>-</button>
+                <button className='button-count' onClick={lessProduct} disabled ={count === 1 ? true : false}>-</button>
                 <p className='count' >{count}</p>
                 <button className='button-count' onClick={addProduct} disabled={count === stock ? true : false}>+</button>
             </div>
-            <Button variant="contained" onClick={() => onAdd(count)} disabled={count === 0 ? true : false}>Comprar</Button>    
+            
+            <Button variant="contained" onClick={({click}) =>  onAdd(count) } disabled={count === 0 ? true : false}>Agregar al carrito</Button>    
         </div>
     )
 }
