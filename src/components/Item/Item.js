@@ -1,13 +1,15 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import ItemCount from '../ItemCount/ItemCount';
+//import ItemCount from '../ItemCount/ItemCount';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import { Link } from 'react-router-dom';
 
-const Item = ({id, title, price, stock, image}) =>{
 
+
+
+const Item = ({id, title, price, stock, image}) =>{
 
 
     return(

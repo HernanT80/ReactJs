@@ -1,7 +1,6 @@
 import './App.css';
+import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar/NavBar'
-import Products from './components/Products/Products'
-import ItemList from './components/ItemList/ItemList';
 import './components/NavBar/NavBar.css'
 import './components/CartWidget/CartWidget.css'
 import './components/Products/Products.css'
@@ -19,24 +18,20 @@ import ContactPages from './Pages/ContactPages';
 import ProductosPages from './Pages/ProductosPage';
 import DetailPage from './Pages/Detail';
 
-//context
-import { CartProvider } from './context/cartContext';
 
 function App() {
   return (
     <div className="App">
-      <CartProvider>
-        <BrowserRouter>
-          <NavBar />
-          <Routes>
-            <Route path='/' element={<HomePage />}/>
-            <Route path='/category' element={<ProductosPages />}/>
-            <Route path='/:category/:id' element={<DetailPage />}/>
-            <Route path='/productos/:category' element={<ItemListContainer />}/>
-            <Route path='/Contacto' element={<ContactPages />}/>
-          </Routes>
-        </BrowserRouter>
-      </CartProvider>
+          <BrowserRouter>
+            <NavBar />
+            <Routes>
+              <Route path='/' element={<HomePage />}/>
+              <Route path='/category' element={<ProductosPages />}/>
+              <Route path='/:category/:id' element={<DetailPage />}/>
+              <Route path='/productos/:category' element={<ItemListContainer />}/>
+              <Route path='/Contacto' element={<ContactPages />}/>
+            </Routes>
+          </BrowserRouter>
     </div>
   );
 }
