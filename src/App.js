@@ -11,17 +11,20 @@ import './components/ItemDetail/ItemDetail.css'
 import {BrowserRouter,Routes,Route } from 'react-router-dom'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
-
 //pages
 import HomePage from './Pages/HomePage';
 import ContactPages from './Pages/ContactPages';
 import ProductosPages from './Pages/ProductosPage';
 import DetailPage from './Pages/Detail';
 
+//context
+import { CartProvider } from './context/CartContext';
+
 
 function App() {
   return (
     <div className="App">
+          <CartProvider>
           <BrowserRouter>
             <NavBar />
             <Routes>
@@ -32,6 +35,7 @@ function App() {
               <Route path='/Contacto' element={<ContactPages />}/>
             </Routes>
           </BrowserRouter>
+          </CartProvider>
     </div>
   );
 }

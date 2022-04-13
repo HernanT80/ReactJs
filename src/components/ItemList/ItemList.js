@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react'; 
 import { DataProduct } from '../DataProduct/DataProduct';
 import '../ItemList/ItemList.css'
 import Item from "../Item/Item";

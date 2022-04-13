@@ -1,5 +1,6 @@
-import React from'react';
+import React, { useContext } from'react';
 import { useState, useEffect} from 'react';
+import CartContext from '../../context/cartContext';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import ProductMock from '../DataProduct/ProductMock'
 
@@ -9,6 +10,8 @@ const ItemDetailContainer = () =>{
 
     const [product, setProduct] = useState([])
     const [sumItem, setSumItem] = useState(false)
+
+    const { addProductToCart } = useContext(CartContext)
 
     const getProduct = () => {
         return new Promise((resolve, reject) => {
@@ -25,7 +28,7 @@ const ItemDetailContainer = () =>{
     },[])
 
     const onAdd =(count) =>{
-        console.log(`Agregastess ${product.title}, cantidad: ${count}`)
+        addProductToCart(product,count);
         setSumItem(true);
     }
      
