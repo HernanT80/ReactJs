@@ -10,6 +10,8 @@ import './components/ItemList/ItemList.css'
 import './components/ItemDetail/ItemDetail.css'
 import {BrowserRouter,Routes,Route } from 'react-router-dom'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import CartPage from './components/CartPage/CartPage'
+
 
 //pages
 import HomePage from './Pages/HomePage';
@@ -28,6 +30,7 @@ function App() {
           <BrowserRouter>
             <NavBar />
             <Routes>
+             <Route path='/cart' element={<CartPage />}/>
               <Route path='/' element={<HomePage />}/>
               <Route path='/category' element={<ProductosPages />}/>
               <Route path='/:category/:id' element={<DetailPage />}/>

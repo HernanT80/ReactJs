@@ -7,7 +7,7 @@ const CartProvider = ({children}) => {
     const [cartProducts, setCartProducts] = useState([])
 
     const addProductToCart = (product, count) => {
-        console.log("SE agragar producto", product)
+
         const cartArray ={
             item: product,
             count
@@ -29,12 +29,13 @@ const CartProvider = ({children}) => {
         return cartProducts.some(e => e.id === id)
     }
 
+
     const data = {
         cartProducts,
         addProductToCart,
         removeItem,
         clear,
-        isInCart
+        isInCart,
     }
 
     return(
