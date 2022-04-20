@@ -12,7 +12,7 @@ const ItemDetail = ({data, onAdd, sumItem}) => {
     <Container className='container-general'> 
            <div className='container-detail'>
             <div className='container-detail__img'>
-                <img src={data.image} alt="celu" />
+                <img src={`../assets/${data.image}`} alt="celu" />
             </div>
             <div className='container-detail__info'>
                 <h3 className='info__title'>{data.title}</h3>
